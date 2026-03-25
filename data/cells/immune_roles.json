@@ -1,0 +1,72 @@
+{
+  "macrophages": {
+    "fullName": "Tumor-Associated Macrophages (TAMs)",
+    "tumorEffect": "pro-tumor",
+    "hccRole": "TAMs are the most abundant immune cells in HCC, promoting progression through immunosuppression, angiogenesis, and matrix remodeling. Hypoxia polarizes them toward the M2 phenotype, enhancing immune evasion.",
+    "prognosis": "High TAM infiltration correlates with poor survival and sorafenib resistance",
+    "therapy": "CSF1R inhibitors (pexidartinib), CD47 blockade, repolarization strategies"
+  },
+  "smooth muscle cells": {
+    "fullName": "Vascular Smooth Muscle Cells",
+    "tumorEffect": "pro-tumor",
+    "hccRole": "VSMCs contribute to abnormal tumor vasculature, supporting poorly perfused vessels that perpetuate hypoxia. Hypoxia promotes their proliferation via PDGF signaling.",
+    "prognosis": "Increased VSMC coverage associates with anti-angiogenic therapy resistance",
+    "therapy": "Anti-angiogenic agents (sorafenib, lenvatinib) target VSMC-supported vasculature"
+  },
+  "fibroblasts": {
+    "fullName": "Cancer-Associated Fibroblasts (CAFs)",
+    "tumorEffect": "pro-tumor",
+    "hccRole": "CAFs originate from hepatic stellate cells and produce collagen, growth factors (HGF, FGF), and immunosuppressive cytokines. Hypoxia activates them via TGF-beta signaling.",
+    "prognosis": "Dense fibrotic stroma associates with poor drug penetration and therapy resistance",
+    "therapy": "Anti-fibrotic agents (nintedanib), hedgehog pathway inhibitors"
+  },
+  "t-cells": {
+    "fullName": "T Cells (CD4+ and CD8+)",
+    "tumorEffect": "mixed",
+    "hccRole": "CD8+ T cells provide anti-tumor killing, but hypoxia upregulates PD-1, TIM-3, and LAG-3, driving exhaustion. Tregs accumulate under hypoxic conditions, suppressing immunity.",
+    "prognosis": "High CD8+ infiltration predicts better survival; high Treg/CD8 ratio predicts poor outcomes",
+    "therapy": "Immune checkpoint inhibitors (atezolizumab + bevacizumab), anti-LAG-3, anti-TIM-3"
+  },
+  "endothelial cells": {
+    "fullName": "Endothelial Cells (Vascular and Sinusoidal)",
+    "tumorEffect": "pro-tumor",
+    "hccRole": "Liver sinusoidal endothelial cells lose fenestrations during HCC progression. Hypoxia drives VEGF-dependent angiogenesis, creating the hypervascular pattern characteristic of HCC.",
+    "prognosis": "Microvascular invasion is a strong predictor of recurrence after resection",
+    "therapy": "Anti-VEGF (bevacizumab), anti-angiogenic TKIs (sorafenib, lenvatinib)"
+  },
+  "dendritic cells": {
+    "fullName": "Dendritic Cells (DCs)",
+    "tumorEffect": "anti-tumor (when functional)",
+    "hccRole": "DCs bridge innate and adaptive immunity. Hypoxia impairs their maturation and antigen presentation, promoting tolerogenic phenotypes that fail to prime anti-tumor T cells.",
+    "prognosis": "Low mature DC infiltration correlates with poor prognosis and reduced immunotherapy response",
+    "therapy": "DC vaccines, FLT3 ligand, STING agonists"
+  },
+  "granulocytes": {
+    "fullName": "Tumor-Associated Neutrophils (TANs)",
+    "tumorEffect": "pro-tumor",
+    "hccRole": "TANs promote HCC progression through NET formation, MMP9-mediated matrix degradation, and T cell suppression. Hypoxia prolongs neutrophil survival and promotes N2 polarization.",
+    "prognosis": "High neutrophil-to-lymphocyte ratio (NLR) predicts poor survival and therapy resistance",
+    "therapy": "CXCR2 antagonists, PAD4 inhibitors, TGF-beta blockade"
+  },
+  "plasma cells": {
+    "fullName": "Plasma Cells (Antibody-Producing B Cells)",
+    "tumorEffect": "mixed",
+    "hccRole": "Plasma cells in tertiary lymphoid structures (TLS) can mediate anti-tumor ADCC. However, regulatory plasma cells produce immunosuppressive IL-10 and IL-35.",
+    "prognosis": "TLS with plasma cells predicts better immunotherapy response; isolated IgA+ plasma cells may indicate immunosuppression",
+    "therapy": "Strategies to induce TLS formation, CXCL13 agonism"
+  },
+  "hepatocytes": {
+    "fullName": "Hepatocytes (Malignant and Non-malignant)",
+    "tumorEffect": "pro-tumor (malignant)",
+    "hccRole": "Malignant hepatocytes are the tumor cells themselves. Hypoxia activates HIF-1alpha, driving the Warburg effect, EMT, stemness markers, and apoptosis resistance.",
+    "prognosis": "Hypoxic gene signatures in tumor hepatocytes correlate with aggressive phenotypes and macrovascular invasion",
+    "therapy": "HIF inhibitors (belzutifan), GPC3-targeted therapies, metabolic interventions"
+  },
+  "b-cells": {
+    "fullName": "B Lymphocytes",
+    "tumorEffect": "mixed",
+    "hccRole": "B cells in HCC can form tertiary lymphoid structures that support anti-tumor immunity, or produce regulatory cytokines that suppress it. Their role depends on location and differentiation state.",
+    "prognosis": "TLS-associated B cells predict favorable outcomes; regulatory B cells associate with progression",
+    "therapy": "B cell-directed strategies in combination with checkpoint inhibitors"
+  }
+}

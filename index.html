@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCC OmniScope | Multi-Scale 3D Cancer Biology Explorer</title>
+    <link rel="stylesheet" href="css/main.css?v=6">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading screen -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="dna-helix">
+                <div class="strand"></div>
+                <div class="strand"></div>
+            </div>
+            <h1>HCC OmniScope</h1>
+            <p class="subtitle">Multi-Scale 3D Cancer Biology Explorer</p>
+            <div class="progress-bar"><div class="progress-fill" id="load-progress"></div></div>
+            <p class="load-status" id="load-status">Initializing...</p>
+        </div>
+    </div>
+
+    <!-- Main 3D canvas container -->
+    <div id="canvas-container"></div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <h2>HCC OmniScope</h2>
+            <p class="tagline">Isha Chhikara</p>
+        </div>
+
+        <nav class="scale-nav">
+            <button class="scale-btn active" data-scale="genes" id="btn-genes">
+                <span class="scale-icon">&#x1F9EC;</span>
+                <span class="scale-label">Gene Universe</span>
+                <span class="scale-count" id="gene-count">20 genes</span>
+            </button>
+            <div class="scale-arrow">&darr;</div>
+            <button class="scale-btn" data-scale="cells" id="btn-cells">
+                <span class="scale-icon">&#x1F9EB;</span>
+                <span class="scale-label">Cell Atlas</span>
+                <span class="scale-count" id="cell-count">85 cell types</span>
+            </button>
+            <div class="scale-arrow">&darr;</div>
+            <button class="scale-btn" data-scale="patients" id="btn-patients">
+                <span class="scale-icon">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</span>
+                <span class="scale-label">Patient Landscape</span>
+                <span class="scale-count" id="patient-count">302 patients</span>
+            </button>
+        </nav>
+
+        <!-- Scale-specific context text -->
+        <div class="sidebar-section" id="info-panel">
+            <h3 id="info-title">About This Research</h3>
+            <div id="info-content">
+                <p>Hepatocellular carcinoma (HCC) thrives in hypoxic conditions by activating oxygen-sensing pathways originally shaped by millennia of human altitude adaptation. This research identifies two LASSO-Cox prognostic signatures: a 9-gene altitude adaptation set (C-index 0.671) and an 11-gene ROS/ferroptosis set (C-index 0.700), validated across four independent cohorts totaling 648 patients. HMOX1 bridges both signatures, linking evolutionary oxygen sensing to tumor redox biology.</p>
+            </div>
+        </div>
+
+        <!-- Scale context (changes per scale) -->
+        <div class="sidebar-section" id="scale-context">
+            <h3>What You Are Viewing</h3>
+            <div id="scale-context-text"></div>
+        </div>
+
+        <div class="sidebar-section" id="legend-panel">
+            <h3>Legend</h3>
+            <div id="legend-content"></div>
+        </div>
+
+        <!-- Gene Search -->
+        <div class="sidebar-section">
+            <h3>Search</h3>
+            <div id="search-container"></div>
+        </div>
+
+        <!-- Patient Filters (shown only on patient scale) -->
+        <div class="sidebar-section" id="filter-section" style="display:none;">
+            <h3>Patient Filters</h3>
+            <div id="filter-container"></div>
+            <div id="slider-container" style="margin-top:0.5rem;"></div>
+        </div>
+
+        <div class="sidebar-section controls-section">
+            <h3>Controls</h3>
+            <div class="control-row">
+                <label for="color-mode">Color by:</label>
+                <select id="color-mode">
+                    <option value="signature">Signature</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="sidebar-section">
+            <h3>Tools</h3>
+            <div class="tool-buttons">
+                <button class="tool-btn" id="btn-km" title="Kaplan-Meier Curves (K)">
+                    <span class="tool-icon">&#x1F4C8;</span>
+                    <span>Survival Curves</span>
+                </button>
+                <button class="tool-btn" id="btn-drugs" title="Drug Sensitivity (D)">
+                    <span class="tool-icon">&#x1F48A;</span>
+                    <span>Drug Explorer</span>
+                </button>
+                <button class="tool-btn" id="btn-calc" title="Risk Calculator (R)">
+                    <span class="tool-icon">&#x1F9EE;</span>
+                    <span>Risk Calculator</span>
+                </button>
+                <button class="tool-btn" id="btn-screenshot" title="Screenshot (S)">
+                    <span class="tool-icon">&#x1F4F7;</span>
+                    <span>Screenshot</span>
+                </button>
+                <button class="tool-btn" id="btn-fullscreen" title="Fullscreen (F)">
+                    <span class="tool-icon">&#x26F6;</span>
+                    <span>Fullscreen</span>
+                </button>
+                <button class="tool-btn" id="btn-heatmap" title="Expression Heatmap (H)">
+                    <span class="tool-icon">&#x1F5BC;</span>
+                    <span>Heatmap</span>
+                </button>
+                <button class="tool-btn" id="btn-venn" title="Signature Venn (V)">
+                    <span class="tool-icon">&#x25CE;</span>
+                    <span>Venn Diagram</span>
+                </button>
+                <button class="tool-btn" id="btn-network" title="Network Stats (N)">
+                    <span class="tool-icon">&#x1F578;</span>
+                    <span>Network Stats</span>
+                </button>
+                <button class="tool-btn" id="btn-table" title="Data Table (T)">
+                    <span class="tool-icon">&#x1F4CB;</span>
+                    <span>Data Table</span>
+                </button>
+                <button class="tool-btn" id="btn-share" title="Share Link (U)">
+                    <span class="tool-icon">&#x1F517;</span>
+                    <span>Share</span>
+                </button>
+            </div>
+            <h3 style="margin-top:0.8rem;">Academic</h3>
+            <div class="tool-buttons">
+                <button class="tool-btn" id="btn-forest" title="Forest Plot">
+                    <span class="tool-icon">&#x1F333;</span>
+                    <span>Forest Plot</span>
+                </button>
+                <button class="tool-btn" id="btn-roc" title="ROC Curves">
+                    <span class="tool-icon">&#x1F4C9;</span>
+                    <span>ROC Curves</span>
+                </button>
+                <button class="tool-btn" id="btn-calibration" title="Calibration">
+                    <span class="tool-icon">&#x1F3AF;</span>
+                    <span>Calibration</span>
+                </button>
+                <button class="tool-btn" id="btn-nomogram" title="Nomogram">
+                    <span class="tool-icon">&#x1F4CF;</span>
+                    <span>Nomogram</span>
+                </button>
+                <button class="tool-btn" id="btn-enrichment" title="Enrichment">
+                    <span class="tool-icon">&#x1F9EC;</span>
+                    <span>Enrichment</span>
+                </button>
+                <button class="tool-btn" id="btn-benchmark" title="Benchmark">
+                    <span class="tool-icon">&#x1F3C6;</span>
+                    <span>Benchmark</span>
+                </button>
+                <button class="tool-btn" id="btn-mutations" title="Mutations">
+                    <span class="tool-icon">&#x1F9EC;</span>
+                    <span>Mutations</span>
+                </button>
+                <button class="tool-btn" id="btn-immune" title="Immune Heatmap">
+                    <span class="tool-icon">&#x1F9E0;</span>
+                    <span>Immune Map</span>
+                </button>
+                <button class="tool-btn" id="btn-methods" title="Methods">
+                    <span class="tool-icon">&#x1F4D6;</span>
+                    <span>Methods</span>
+                </button>
+                <button class="tool-btn" id="btn-gaps" title="Research Gaps">
+                    <span class="tool-icon">&#x2753;</span>
+                    <span>Gaps</span>
+                </button>
+                <button class="tool-btn" id="btn-hypotheses" title="Hypotheses">
+                    <span class="tool-icon">&#x1F4A1;</span>
+                    <span>Hypotheses</span>
+                </button>
+                <button class="tool-btn" id="btn-cohort-dash" title="Cohort Dashboard">
+                    <span class="tool-icon">&#x1F4CA;</span>
+                    <span>Cohort</span>
+                </button>
+            </div>
+            <h3 style="margin-top:0.8rem;">Dashboard</h3>
+            <div class="tool-buttons">
+                <button class="tool-btn" id="btn-leaderboard" title="Gene Leaderboard">
+                    <span class="tool-icon">&#x1F3C5;</span>
+                    <span>Leaderboard</span>
+                </button>
+                <button class="tool-btn" id="btn-volcano" title="Volcano Plot">
+                    <span class="tool-icon">&#x1F30B;</span>
+                    <span>Volcano</span>
+                </button>
+                <button class="tool-btn" id="btn-sankey" title="Sankey Diagram">
+                    <span class="tool-icon">&#x1F500;</span>
+                    <span>Sankey</span>
+                </button>
+                <button class="tool-btn" id="btn-radar" title="Radar Chart">
+                    <span class="tool-icon">&#x1F4E1;</span>
+                    <span>Radar</span>
+                </button>
+                <button class="tool-btn" id="btn-corrmatrix" title="Correlation Matrix">
+                    <span class="tool-icon">&#x1F532;</span>
+                    <span>Corr Matrix</span>
+                </button>
+                <button class="tool-btn" id="btn-timeline" title="Research Timeline">
+                    <span class="tool-icon">&#x23F0;</span>
+                    <span>Timeline</span>
+                </button>
+                <button class="tool-btn" id="btn-presentation" title="Export Presentation">
+                    <span class="tool-icon">&#x1F4BD;</span>
+                    <span>Export Deck</span>
+                </button>
+                <button class="tool-btn" id="btn-annotations" title="Annotations">
+                    <span class="tool-icon">&#x1F4DD;</span>
+                    <span>Notes</span>
+                </button>
+            </div>
+            <p class="control-hint">Press ? for all keyboard shortcuts</p>
+        </div>
+
+        <button class="tour-btn" id="start-tour">
+            <span>&#x25B6;</span> Research Story Tour
+        </button>
+
+        <div class="sidebar-footer">
+            <div id="theme-container" style="margin-bottom:0.5rem;"></div>
+            <p>Built with Three.js | Data: TCGA-LIHC, Human Protein Atlas, CellxGene Census, GDSC</p>
+        </div>
+    </div>
+
+    <!-- Summary Statistics Panel (always visible) -->
+    <div id="summary-stats">
+        <div class="stats-header">Research Summary</div>
+        <div class="stats-grid">
+            <div class="stat-block">
+                <span class="stat-number">20</span>
+                <span class="stat-desc">prognostic genes</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-number">9</span>
+                <span class="stat-desc">altitude signature</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-number">11</span>
+                <span class="stat-desc">ROS/ferroptosis</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-number">1</span>
+                <span class="stat-desc">bridge gene</span>
+            </div>
+        </div>
+        <div class="stats-divider"></div>
+        <div class="stats-grid">
+            <div class="stat-block">
+                <span class="stat-number">302</span>
+                <span class="stat-desc">training patients</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-number">648</span>
+                <span class="stat-desc">validation patients</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-number">85</span>
+                <span class="stat-desc">cell types</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-number">14</span>
+                <span class="stat-desc">tissues</span>
+            </div>
+        </div>
+        <div class="stats-divider"></div>
+        <div class="stats-cindex">
+            <div class="cindex-row">
+                <span class="cindex-label" style="color:#4ade80;">Altitude C-index</span>
+                <span class="cindex-value">0.671</span>
+            </div>
+            <div class="cindex-row">
+                <span class="cindex-label" style="color:#f87171;">ROS C-index</span>
+                <span class="cindex-value">0.700</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hotkeys card (top right) -->
+    <div id="hotkeys-card">
+        <div class="hotkeys-title">Keyboard Shortcuts</div>
+        <div class="hotkey-row"><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><span>Switch scales</span></div>
+        <div class="hotkey-row"><kbd>K</kbd><span>Survival curves</span></div>
+        <div class="hotkey-row"><kbd>D</kbd><span>Drug explorer</span></div>
+        <div class="hotkey-row"><kbd>R</kbd><span>Risk calculator</span></div>
+        <div class="hotkey-row"><kbd>H</kbd><span>Heatmap</span></div>
+        <div class="hotkey-row"><kbd>V</kbd><span>Venn diagram</span></div>
+        <div class="hotkey-row"><kbd>P</kbd><span>Pathway diagram</span></div>
+        <div class="hotkey-row"><kbd>N</kbd><span>Network stats</span></div>
+        <div class="hotkey-row"><kbd>T</kbd><span>Data table</span></div>
+        <div class="hotkey-row"><kbd>S</kbd><span>Screenshot</span></div>
+        <div class="hotkey-row"><kbd>F</kbd><span>Fullscreen</span></div>
+        <div class="hotkey-row"><kbd>U</kbd><span>Share link</span></div>
+        <div class="hotkey-row"><kbd>/</kbd><span>Search genes</span></div>
+        <div class="hotkey-row"><kbd>&#x2190;</kbd><kbd>&#x2192;</kbd><span>Cycle genes</span></div>
+        <div class="hotkey-row"><kbd>Esc</kbd><span>Close panels</span></div>
+    </div>
+
+    <!-- Survival timeline container -->
+    <div id="timeline-container"></div>
+
+    <!-- Hover card -->
+    <div id="hover-card" class="card" style="display:none;"></div>
+
+    <!-- Detail panel (click) -->
+    <div id="detail-panel" class="panel" style="display:none;">
+        <button class="panel-close" id="close-detail">&times;</button>
+        <div id="detail-content"></div>
+    </div>
+
+    <!-- Tour overlay -->
+    <div id="tour-overlay" style="display:none;">
+        <div class="tour-card">
+            <div class="tour-step" id="tour-step">1 / 4</div>
+            <h3 id="tour-title"></h3>
+            <p id="tour-text"></p>
+            <div class="tour-insight" id="tour-insight">
+                <span class="insight-label">Key Insight</span>
+                <p class="insight-text" id="tour-insight-text"></p>
+            </div>
+            <div class="tour-nav">
+                <button id="tour-prev" class="tour-nav-btn">&#x2190; Back</button>
+                <button id="tour-next" class="tour-nav-btn">Next &#x2192;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div id="breadcrumb" style="display:none;">
+        <span class="crumb" data-scale="genes">Genes</span>
+    </div>
+
+    <!-- ES Module Shims for Safari importmap support -->
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

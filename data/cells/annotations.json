@@ -1,0 +1,80 @@
+{
+  "macrophages": {
+    "full_name": "Macrophages (including Tumor-Associated Macrophages)",
+    "hcc_role": "Tumor-associated macrophages (TAMs) are the most abundant immune cells in the HCC microenvironment. Under hypoxia, they polarize toward an M2-like pro-tumorigenic phenotype, suppressing cytotoxic T-cell responses, promoting angiogenesis via VEGF secretion, and remodeling extracellular matrix. Their universal hypoxia-specialist status across 14 tissues suggests this is a deeply conserved myeloid response, not a tumor-specific adaptation.",
+    "prognosis_implication": "High TAM infiltration in HCC correlates with poor overall survival, increased vascular invasion, and resistance to immune checkpoint inhibitors.",
+    "therapeutic_relevance": "Targets include CSF1R inhibitors (pexidartinib), CD47-SIRPa blockade, and repolarization strategies using TLR agonists to shift TAMs from M2 to M1 phenotype."
+  },
+  "fibroblasts": {
+    "full_name": "Fibroblasts (including Cancer-Associated Fibroblasts)",
+    "hcc_role": "Cancer-associated fibroblasts (CAFs) in HCC originate from hepatic stellate cells activated by chronic liver injury. Under hypoxia, they secrete collagen, growth factors (HGF, FGF), and immunosuppressive cytokines that create a fibrotic, immune-cold tumor stroma. Their hypoxia-specialist status in 6 tissues reflects a conserved wound-healing program.",
+    "prognosis_implication": "Dense fibrotic stroma driven by CAFs associates with poor drug penetration, therapy resistance, and reduced immune cell infiltration in HCC.",
+    "therapeutic_relevance": "Anti-fibrotic agents (nintedanib, pirfenidone) and hedgehog pathway inhibitors are under investigation for stromal remodeling in HCC."
+  },
+  "t-cells": {
+    "full_name": "T Cells (CD4+ and CD8+ combined)",
+    "hcc_role": "T cells are central to anti-tumor immunity in HCC, but the hypoxic tumor microenvironment impairs their cytotoxic function. Hypoxia upregulates PD-1, TIM-3, and LAG-3 on tumor-infiltrating T cells, driving exhaustion. Their specialist status in 4 tissues for hypoxia and 6 for altitude genes suggests oxygen sensing directly modulates T-cell fitness.",
+    "prognosis_implication": "High CD8+ T-cell infiltration predicts better survival in HCC, but only when cells are not exhausted. The ratio of functional to exhausted T cells is more prognostic than total count.",
+    "therapeutic_relevance": "Immune checkpoint inhibitors (atezolizumab + bevacizumab) are first-line for advanced HCC. Hypoxia reduction strategies may enhance checkpoint inhibitor efficacy."
+  },
+  "smooth muscle cells": {
+    "full_name": "Smooth Muscle Cells (Vascular and Visceral)",
+    "hcc_role": "Vascular smooth muscle cells in HCC contribute to the aberrant tumor vasculature. Hypoxia drives their proliferation and migration via PDGF and TGF-beta signaling, resulting in poorly organized, leaky blood vessels that perpetuate tumor hypoxia. Their specialist status in 8 tissues reflects the conserved vascular remodeling response to low oxygen.",
+    "prognosis_implication": "Abnormal vasculature in HCC limits drug delivery and creates hypoxic niches that harbor therapy-resistant tumor cells.",
+    "therapeutic_relevance": "Anti-angiogenic agents (bevacizumab, lenvatinib, sorafenib) target the vascular compartment. Vessel normalization strategies aim to improve drug delivery and oxygenation."
+  },
+  "endothelial cells": {
+    "full_name": "Endothelial Cells (Vascular and Sinusoidal)",
+    "hcc_role": "Liver sinusoidal endothelial cells (LSECs) lose their fenestrations during HCC progression, a process called capillarization. Hypoxia drives VEGF-dependent angiogenesis, producing the characteristic hypervascular pattern of HCC visible on contrast-enhanced imaging. Endothelial hypoxia specialist status in 3 tissues connects to the broader angiogenic switch.",
+    "prognosis_implication": "LSEC capillarization is an early event in hepatocarcinogenesis. Microvascular invasion by tumor cells through endothelial barriers is a strong predictor of recurrence after resection.",
+    "therapeutic_relevance": "VEGF/VEGFR-targeted therapies (bevacizumab, ramucirumab) directly target endothelial cell proliferation and are integral to current HCC treatment regimens."
+  },
+  "paneth cells": {
+    "full_name": "Paneth Cells",
+    "hcc_role": "Paneth cells are intestinal epithelial cells not normally found in the liver. Their hypoxia specialist status in 3 gut tissues (colon, rectum, small intestine) is relevant to HCC through the gut-liver axis. Intestinal barrier dysfunction under hypoxia increases bacterial translocation, driving hepatic inflammation and tumor-promoting NF-kB signaling.",
+    "prognosis_implication": "Gut-liver axis disruption, partially mediated by Paneth cell dysfunction, contributes to the chronic inflammatory milieu that drives HCC progression in cirrhotic livers.",
+    "therapeutic_relevance": "Microbiome-targeting therapies and intestinal barrier-restoring strategies are emerging complementary approaches in HCC management."
+  },
+  "plasma cells": {
+    "full_name": "Plasma Cells (Antibody-Secreting B Cells)",
+    "hcc_role": "Tumor-infiltrating plasma cells in HCC produce antibodies and inflammatory cytokines. Their role is context-dependent: tertiary lymphoid structures containing plasma cells associate with better prognosis, while isolated plasma cells producing immunosuppressive IL-10 may promote immune evasion. HIF-target specialist status in 4 tissues suggests hypoxia modulates antibody production programs.",
+    "prognosis_implication": "Presence of tertiary lymphoid structures with organized B and plasma cell zones predicts favorable response to immunotherapy in HCC.",
+    "therapeutic_relevance": "B-cell depletion (rituximab) is not standard in HCC, but enhancing tertiary lymphoid structure formation is an active area of immunotherapy research."
+  },
+  "granulocytes": {
+    "full_name": "Granulocytes (Neutrophils, Eosinophils, Basophils)",
+    "hcc_role": "Tumor-associated neutrophils (TANs) in HCC can be pro-tumorigenic (N2 phenotype) or anti-tumorigenic (N1). Hypoxia shifts neutrophils toward the N2 phenotype, promoting angiogenesis through MMP9 release and suppressing adaptive immunity. Their ROS-signature specialist status in 3 tissues reflects the NADPH oxidase-dependent respiratory burst that defines granulocyte antimicrobial function.",
+    "prognosis_implication": "Elevated neutrophil-to-lymphocyte ratio (NLR) is one of the strongest and simplest prognostic biomarkers in HCC, predicting poor overall survival across multiple treatment settings.",
+    "therapeutic_relevance": "CXCR2 antagonists to block neutrophil recruitment and PAD4 inhibitors to reduce neutrophil extracellular trap (NET) formation are being explored in HCC."
+  },
+  "nk-cells": {
+    "full_name": "Natural Killer Cells",
+    "hcc_role": "NK cells are critical innate lymphocytes for liver immune surveillance. The liver contains the highest density of NK cells of any organ. Hypoxia impairs NK cell cytotoxicity by downregulating activating receptors (NKG2D, NKp46) and upregulating inhibitory HIF-1-dependent programs. This creates an immune escape window for hypoxic tumor cells.",
+    "prognosis_implication": "NK cell depletion in the HCC microenvironment correlates with vascular invasion and early recurrence. Spearman correlation with ROS risk score is negative (r = -0.248), confirming depletion in high-risk patients.",
+    "therapeutic_relevance": "NK cell-based immunotherapies, adoptive NK cell transfer, and NKG2A checkpoint blockade (monalizumab) are in clinical trials for HCC."
+  },
+  "b-cells": {
+    "full_name": "B Lymphocytes",
+    "hcc_role": "Tumor-infiltrating B cells in HCC have dual roles. Within organized tertiary lymphoid structures, they enhance anti-tumor immunity through antigen presentation and T-cell co-stimulation. However, regulatory B cells (Bregs) producing IL-10 and TGF-beta can suppress anti-tumor responses. Hypoxia may shift this balance toward the immunosuppressive Breg phenotype.",
+    "prognosis_implication": "B-cell gene signatures in HCC predict response to anti-PD-1 therapy. Tumors with high B-cell infiltration and tertiary lymphoid structures show superior immunotherapy outcomes.",
+    "therapeutic_relevance": "Strategies to promote tertiary lymphoid structure formation and B-cell-mediated antigen presentation are being combined with immune checkpoint blockade in HCC trials."
+  },
+  "dendritic cells": {
+    "full_name": "Dendritic Cells (Conventional and Plasmacytoid)",
+    "hcc_role": "Dendritic cells (DCs) are professional antigen-presenting cells essential for initiating T-cell responses against tumor antigens. Hypoxia impairs DC maturation, reduces MHC class II expression, and promotes a tolerogenic phenotype that favors regulatory T-cell induction over cytotoxic T-cell priming.",
+    "prognosis_implication": "DC infiltration shows the strongest negative correlation with ROS risk score (Spearman r = -0.282, p = 1e-6), indicating systematic DC depletion in high-risk HCC patients.",
+    "therapeutic_relevance": "DC vaccines pulsed with tumor lysate and combination strategies with checkpoint inhibitors are in clinical development for HCC."
+  },
+  "monocytes": {
+    "full_name": "Monocytes (Classical and Non-classical)",
+    "hcc_role": "Circulating monocytes are recruited to the HCC microenvironment by CCL2 and CSF1, where they differentiate into tumor-associated macrophages. This monocyte-to-macrophage transition is accelerated and skewed toward the immunosuppressive M2 phenotype under hypoxic conditions. Monocyte hypoxia programs are thus the precursor to the TAM phenotype.",
+    "prognosis_implication": "Elevated circulating monocyte counts and high monocyte-to-lymphocyte ratio predict poor prognosis in HCC, reflecting active monocyte recruitment to the tumor.",
+    "therapeutic_relevance": "CCR2 inhibitors to block monocyte recruitment and CSF1R inhibitors to prevent macrophage differentiation are in clinical trials for HCC."
+  },
+  "mixed immune cells": {
+    "full_name": "Mixed Immune Cell Populations",
+    "hcc_role": "In tissues where individual immune cell types cannot be resolved, mixed immune cell populations still show altitude-signature specialist status (3 tissues). This indicates that the altitude-adaptation gene programs are broadly active across immune lineages, not restricted to a single cell type.",
+    "prognosis_implication": "Bulk immune infiltration scores in HCC are prognostic but less informative than cell-type-resolved analyses.",
+    "therapeutic_relevance": "Single-cell RNA sequencing of HCC tumors is increasingly used to resolve mixed populations and identify actionable immune cell subsets."
+  }
+}

@@ -1,0 +1,375 @@
+{
+  "AEBP2": {
+    "fullName": "AE Binding Protein 2",
+    "function": "Accessory component of the Polycomb Repressive Complex 2 (PRC2) that catalyzes histone H3K27 trimethylation. Regulates epigenetic silencing of developmental and tumor suppressor genes.",
+    "pathways": [
+      "Polycomb repressive complex 2 (PRC2)",
+      "Epigenetic silencing",
+      "Chromatin remodeling",
+      "PRC2 complex",
+      "H3K27me3 regulation"
+    ],
+    "drugs": [
+      "Tazemetostat (EZH2 inhibitor, FDA-approved for other cancers, targets PRC2 catalytic subunit)",
+      "EPZ-6438 (EZH2 inhibitor)",
+      "CPI-1205 (EZH2 inhibitor, clinical trials)"
+    ],
+    "hccRole": "Enhances PRC2-mediated silencing of tumor suppressor genes in HCC. Connects hypoxia-driven epigenetic reprogramming to long-term transcriptional changes that sustain tumor phenotype.",
+    "keyFinding": "Overexpression correlates with poor OS in HCC (HR=1.271, 95% CI 1.058-1.525, p=0.01); promotes PRC2-mediated tumor suppressor silencing",
+    "signature": "altitude"
+  },
+  "BACH1": {
+    "fullName": "BTB Domain and CNC Homolog 1",
+    "function": "Transcriptional repressor that competes with Nrf2 for ARE binding. Suppresses antioxidant gene expression and promotes heme-regulated gene programs.",
+    "pathways": [
+      "NRF2-ARE signaling (repressor)",
+      "Heme metabolism",
+      "Metastasis regulation",
+      "Iron homeostasis",
+      "Ferroptosis regulation"
+    ],
+    "drugs": [
+      "HMOX1 inducers (hemin) degrade BACH1 via heme binding",
+      "No approved BACH1-specific inhibitors",
+      "HPP-4382 (BACH1 inhibitor, preclinical, being studied in breast cancer metastasis)",
+      "BACH1 degraders (experimental)",
+      "Hemin (promotes BACH1 degradation)"
+    ],
+    "hccRole": "Context-dependent role in HCC: represses antioxidant genes but promotes metastasis by activating EMT and invasion programs. BACH1 can also promote metabolic reprogramming toward glycolysis in metastatic HCC.",
+    "keyFinding": "Risk factor in HCC (HR=1.193, 95% CI 1.037-1.373, p=0.014); promotes metastasis by activating HK2 and GAPDH glycolytic genes",
+    "signature": "ros"
+  },
+  "CDC42": {
+    "fullName": "Cell Division Cycle 42",
+    "function": "Small Rho-family GTPase controlling cytoskeletal dynamics, cell polarity, and migration. Regulates actin polymerization and filopodia formation.",
+    "pathways": [
+      "Rho GTPase signaling",
+      "Actin cytoskeleton regulation",
+      "Wnt signaling",
+      "Cell polarity",
+      "Cell migration"
+    ],
+    "drugs": [
+      "CASIN (CDC42 inhibitor, preclinical)",
+      "ZCL278 (CDC42 inhibitor, preclinical)",
+      "ML141 (selective CDC42 inhibitor, preclinical)"
+    ],
+    "hccRole": "Promotes HCC invasion and metastasis by reorganizing the actin cytoskeleton. Hypoxia-induced CDC42 activation enables tumor cell migration through extracellular matrix.",
+    "keyFinding": "High expression associates with poor OS in HCC (HR=1.283, 95% CI 1.101-1.495, p=0.001); promotes portal vein invasion",
+    "signature": "altitude"
+  },
+  "EPO": {
+    "fullName": "Erythropoietin",
+    "function": "Glycoprotein hormone that stimulates red blood cell production in response to hypoxia. Canonical HIF target gene and the classical marker of oxygen-sensing pathway activation.",
+    "pathways": [
+      "HIF signaling",
+      "JAK-STAT signaling",
+      "Erythropoiesis",
+      "Angiogenesis",
+      "HIF-1 signaling"
+    ],
+    "drugs": [
+      "Recombinant EPO (epoetin alfa - used for anemia, may be contraindicated in cancer)",
+      "Roxadustat (HIF-PHD inhibitor, upstream)",
+      "JAK2 inhibitors (ruxolitinib - downstream)"
+    ],
+    "hccRole": "HIF-1/2 alpha target gene; autocrine EPO-EPOR signaling in HCC promotes proliferation, angiogenesis, and resistance to hypoxia. Liver is an alternative EPO production site.",
+    "keyFinding": "Risk factor in HCC (HR=1.212, 95% CI 1.056-1.391, p=0.006); EPO-EPOR axis promotes HCC angiogenesis",
+    "signature": "altitude"
+  },
+  "G6PD": {
+    "fullName": "Glucose-6-Phosphate Dehydrogenase",
+    "function": "Rate-limiting enzyme of the pentose phosphate pathway. Generates NADPH, essential for glutathione recycling and lipid biosynthesis.",
+    "pathways": [
+      "Pentose phosphate pathway",
+      "NADPH production",
+      "Glutathione recycling",
+      "Nucleotide biosynthesis",
+      "Glutathione metabolism"
+    ],
+    "drugs": [
+      "6-Aminonicotinamide (6-AN, G6PD inhibitor, preclinical)",
+      "DHEA (dehydroepiandrosterone, G6PD inhibitor)",
+      "Polydatin (G6PD inhibitor, preclinical)"
+    ],
+    "hccRole": "Provides the NADPH supply that fuels both antioxidant defense and lipid synthesis in rapidly growing HCC. Upregulation correlates with poor prognosis and therapy resistance.",
+    "keyFinding": "Overexpression predicts poor OS in HCC (HR=1.371, 95% CI 1.229-1.528, p<0.001); links metabolic reprogramming to redox homeostasis",
+    "signature": "ros"
+  },
+  "GC": {
+    "fullName": "GC Vitamin D Binding Protein (DBP)",
+    "function": "Major plasma carrier of vitamin D metabolites. Also functions as a macrophage activating factor (GcMAF) and actin scavenger after tissue injury.",
+    "pathways": [
+      "Vitamin D metabolism",
+      "Actin scavenging",
+      "Immune modulation",
+      "Vitamin D transport",
+      "Macrophage activation"
+    ],
+    "drugs": [
+      "Vitamin D analogs (calcitriol, paricalcitol) - indirect pathway activation",
+      "No direct GC-targeting drugs",
+      "Vitamin D supplementation (modulates GC levels)"
+    ],
+    "hccRole": "Protective factor with HR < 1 (0.763). Liver-synthesized protein whose loss reflects hepatocyte dysfunction. Low GC expression correlates with advanced HCC stage and impaired macrophage-mediated tumor clearance.",
+    "keyFinding": "Protective in HCC (HR=0.763, 95% CI 0.635-0.918, p=0.004); low expression marks poor differentiation",
+    "signature": "altitude"
+  },
+  "GLRX2": {
+    "fullName": "Glutaredoxin 2",
+    "function": "Mitochondrial glutaredoxin that maintains iron-sulfur cluster integrity and protects against oxidative damage in mitochondria.",
+    "pathways": [
+      "Mitochondrial redox homeostasis",
+      "Glutathione system",
+      "Iron-sulfur cluster assembly",
+      "Ferroptosis regulation"
+    ],
+    "drugs": [
+      "No direct GLRX2 inhibitors",
+      "BSO (buthionine sulfoximine, depletes GSH substrate)",
+      "Mitochondria-targeted antioxidant disruptors (preclinical)"
+    ],
+    "hccRole": "Maintains mitochondrial redox balance in HCC. Overexpression protects tumor mitochondria from oxidative damage and supports iron-sulfur cluster biogenesis needed for tumor metabolism.",
+    "keyFinding": "Risk factor in HCC (HR=1.224, 95% CI 1.045-1.433, p=0.012); mitochondrial redox protector enabling tumor survival",
+    "signature": "ros"
+  },
+  "GRB2": {
+    "fullName": "Growth Factor Receptor Bound Protein 2",
+    "function": "Adaptor protein linking receptor tyrosine kinases (RTKs) to the Ras-MAPK signaling cascade. Essential for growth factor signal transduction.",
+    "pathways": [
+      "RAS-MAPK signaling",
+      "EGFR signaling",
+      "PI3K-AKT signaling",
+      "HGF/MET signaling",
+      "MAPK signaling",
+      "RTK signaling"
+    ],
+    "drugs": [
+      "Sorafenib (downstream MAPK pathway)",
+      "Lenvatinib (multi-kinase inhibitor)",
+      "Trametinib (MEK inhibitor, downstream)"
+    ],
+    "hccRole": "Amplifies proliferative signaling in HCC. Connects hypoxia-driven growth factor release to downstream MAPK activation, linking oxygen sensing to tumor cell division.",
+    "keyFinding": "Overexpression correlates with poor OS in HCC (HR=1.342, 95% CI 1.148-1.568, p<0.001)",
+    "signature": "altitude"
+  },
+  "GSR": {
+    "fullName": "Glutathione-Disulfide Reductase",
+    "function": "Reduces oxidized glutathione (GSSG) back to reduced glutathione (GSH) using NADPH. Maintains the intracellular GSH pool critical for detoxification and antioxidant defense.",
+    "pathways": [
+      "Glutathione metabolism",
+      "Antioxidant defense",
+      "NADPH-dependent redox cycling",
+      "ROS detoxification",
+      "Drug metabolism"
+    ],
+    "drugs": [
+      "BCNU/Carmustine (GSR inhibitor, FDA-approved for brain tumors)",
+      "2-AAPA (GSR inhibitor, preclinical)",
+      "Auranofin (indirect, inhibits thioredoxin system)"
+    ],
+    "hccRole": "Maintains the GSH/GSSG ratio in HCC, sustaining the glutathione antioxidant shield that protects tumor cells from ROS damage and ferroptosis.",
+    "keyFinding": "Overexpression correlates with poor OS in HCC (HR=1.339, 95% CI 1.142-1.571, p<0.001); high GSR sustains ferroptosis resistance",
+    "signature": "ros"
+  },
+  "HK2": {
+    "fullName": "Hexokinase 2",
+    "function": "Phosphorylates glucose to glucose-6-phosphate, the first committed step of glycolysis. Localizes to the outer mitochondrial membrane, coupling glycolysis to mitochondrial function.",
+    "pathways": [
+      "Glycolysis",
+      "HIF-1 signaling",
+      "mTOR signaling",
+      "Apoptosis regulation"
+    ],
+    "drugs": [
+      "2-Deoxyglucose (2-DG, HK2 inhibitor)",
+      "3-Bromopyruvate (HK2 inhibitor, preclinical)",
+      "Lonidamine (HK inhibitor, clinical trials)"
+    ],
+    "hccRole": "Rate-limiting glycolytic enzyme overexpressed in HCC. Binds mitochondrial VDAC to inhibit apoptosis while fueling the Warburg effect. HIF-1alpha transcriptional target.",
+    "keyFinding": "Overexpression predicts poor OS in HCC (HR=1.287, 95% CI 1.116-1.485, p=0.001); silencing inhibits HCC growth in xenograft models",
+    "signature": "altitude"
+  },
+  "HMOX1": {
+    "fullName": "Heme Oxygenase 1",
+    "function": "Catalyzes oxidative cleavage of heme to biliverdin, carbon monoxide, and free iron. Central regulator of oxidative stress defense, ferroptosis resistance, and inflammatory modulation in the tumor microenvironment.",
+    "pathways": [
+      "Heme degradation",
+      "NRF2 antioxidant response",
+      "HIF-1 signaling",
+      "Ferroptosis regulation",
+      "Iron homeostasis",
+      "Ferroptosis",
+      "Mineral absorption",
+      "Porphyrin metabolism"
+    ],
+    "drugs": [
+      "ZnPP (HMOX1 inhibitor, experimental)",
+      "SnMP (tin mesoporphyrin, HMOX1 inhibitor)",
+      "Hemin (HMOX1 inducer)",
+      "Sorafenib (indirect, via Nrf2-HMOX1 axis)"
+    ],
+    "hccRole": "Dual role as both altitude adaptation (HIF-1 target) and ferroptosis regulator. Releases free iron from heme (pro-ferroptotic) but generates cytoprotective CO and biliverdin (anti-ferroptotic). Overexpression in HCC promotes tumor survival under oxidative stress.",
+    "keyFinding": "The overlap gene between both signatures; risk factor in HCC (HR=1.148, 95% CI 1.033-1.276, p=0.01); links hypoxia adaptation to redox homeostasis",
+    "signature": "both"
+  },
+  "LDHA": {
+    "fullName": "Lactate Dehydrogenase A",
+    "function": "Converts pyruvate to lactate under anaerobic conditions. The canonical marker of the Warburg effect and glycolytic metabolism in tumors.",
+    "pathways": [
+      "Glycolysis",
+      "HIF-1 signaling",
+      "Warburg effect",
+      "Gluconeogenesis"
+    ],
+    "drugs": [
+      "Gossypol (LDHA inhibitor)",
+      "FX-11 (selective LDHA inhibitor)",
+      "Oxamate (LDH inhibitor, preclinical)",
+      "Galloflavin"
+    ],
+    "hccRole": "Highest LASSO coefficient (0.147) in the altitude signature. Drives aerobic glycolysis in HCC, producing lactate that acidifies the tumor microenvironment and suppresses anti-tumor immunity.",
+    "keyFinding": "High LDHA predicts poor OS in HCC (HR=1.343, 95% CI 1.160-1.554, p<0.001)",
+    "signature": "altitude"
+  },
+  "MAFG": {
+    "fullName": "MAF BZIP Transcription Factor G",
+    "function": "Small Maf protein that heterodimerizes with Nrf2 to activate antioxidant response elements (AREs). Coordinates transcription of detoxification and antioxidant genes under oxidative stress.",
+    "pathways": [
+      "NRF2-ARE signaling",
+      "Oxidative stress response",
+      "Epigenetic regulation",
+      "Drug metabolism"
+    ],
+    "drugs": [
+      "No direct MAFG inhibitors",
+      "Brusatol (NRF2 inhibitor, preclinical)",
+      "ML385 (NRF2 inhibitor, preclinical)"
+    ],
+    "hccRole": "Second highest hazard ratio (1.654) among all 20 genes. Drives Nrf2-dependent antioxidant programs that shield HCC cells from ferroptosis and chemotherapy-induced ROS.",
+    "keyFinding": "Highest HR in ROS/ferroptosis signature (HR=1.654, 95% CI 1.401-1.954, p<0.001); MAFG amplification drives NRF2-dependent chemoresistance",
+    "signature": "ros"
+  },
+  "MSRA": {
+    "fullName": "Methionine Sulfoxide Reductase A",
+    "function": "Repairs oxidized methionine residues in proteins, reversing oxidative damage. Acts as both a protein repair enzyme and an antioxidant scavenger of ROS.",
+    "pathways": [
+      "Methionine sulfoxide repair",
+      "Oxidative stress defense",
+      "Protein quality control",
+      "Protein repair",
+      "Methionine metabolism",
+      "Antioxidant defense"
+    ],
+    "drugs": [
+      "No direct MSRA-targeting drugs",
+      "Methionine supplementation (indirect)",
+      "Antioxidant-based strategies (selenium compounds)"
+    ],
+    "hccRole": "Uniquely protective: the only gene in the ROS signature with HR < 1 (0.725). High MSRA expression associates with better survival, suggesting it restrains tumor progression through oxidative damage repair.",
+    "keyFinding": "Only protective gene in ROS/ferroptosis signature (HR=0.725, 95% CI 0.587-0.896, p=0.003); low expression marks aggressive HCC",
+    "signature": "ros"
+  },
+  "NCF2": {
+    "fullName": "Neutrophil Cytosolic Factor 2 (p67phox)",
+    "function": "Component of the NADPH oxidase complex that generates superoxide radicals. Part of the innate immune defense system for pathogen killing.",
+    "pathways": [
+      "NADPH oxidase signaling",
+      "ROS production",
+      "Innate immunity",
+      "NOX2 complex assembly",
+      "NADPH oxidase complex"
+    ],
+    "drugs": [
+      "Diphenyleneiodonium (DPI, NOX inhibitor, preclinical)",
+      "Apocynin (NADPH oxidase inhibitor, preclinical)",
+      "GKT137831 (NOX1/4 inhibitor, clinical trials for fibrosis)"
+    ],
+    "hccRole": "Component of NOX2 NADPH oxidase in tumor-infiltrating immune cells. Paradoxically, NCF2-driven ROS in the tumor microenvironment can promote HCC through chronic inflammation and DNA damage.",
+    "keyFinding": "Risk factor in HCC (HR=1.246, 95% CI 1.096-1.417, p=0.001); reflects pro-tumorigenic inflammation in liver microenvironment",
+    "signature": "ros"
+  },
+  "SENP1": {
+    "fullName": "SUMO Specific Peptidase 1",
+    "function": "De-SUMOylation enzyme that removes SUMO modifications from target proteins, including HIF-1alpha. Regulates protein stability and transcriptional activity under hypoxia.",
+    "pathways": [
+      "SUMOylation",
+      "HIF-1 signaling",
+      "Protein stability regulation",
+      "HIF-1 regulation",
+      "Protein modification"
+    ],
+    "drugs": [
+      "No approved SENP1 inhibitors",
+      "Momordin Ic (preclinical SENP1 inhibitor)",
+      "Triptolide (indirect, preclinical)"
+    ],
+    "hccRole": "Stabilizes HIF-1alpha by removing SUMO tags that mark it for degradation. SENP1 overexpression in HCC amplifies the hypoxic transcriptional response even under mild oxygen deprivation.",
+    "keyFinding": "Overexpression correlates with poor OS in HCC (HR=1.329, 95% CI 1.122-1.574, p=0.001); promotes HIF-1alpha stability",
+    "signature": "altitude"
+  },
+  "SLC7A11": {
+    "fullName": "Solute Carrier Family 7 Member 11 (xCT)",
+    "function": "Cystine/glutamate antiporter that imports cystine for glutathione synthesis. The primary gatekeeper of cysteine supply for the glutathione-GPX4 ferroptosis defense axis.",
+    "pathways": [
+      "Cystine uptake",
+      "Glutathione biosynthesis",
+      "Ferroptosis resistance",
+      "NRF2 target genes",
+      "Ferroptosis",
+      "Amino acid transport"
+    ],
+    "drugs": [
+      "Erastin (SLC7A11 inhibitor, ferroptosis inducer)",
+      "Sulfasalazine (FDA-approved, SLC7A11 inhibitor)",
+      "Sorafenib (partially inhibits SLC7A11)",
+      "Imidazole ketone erastin (IKE, preclinical)"
+    ],
+    "hccRole": "Master regulator of ferroptosis resistance in HCC. Imports cystine for GSH synthesis, directly suppressing lipid peroxidation and ferroptotic cell death. Key therapeutic target.",
+    "keyFinding": "Risk factor in HCC (HR=1.218, 95% CI 1.100-1.348, p<0.001); sorafenib induces ferroptosis partly through SLC7A11 inhibition in HCC",
+    "signature": "ros"
+  },
+  "SQSTM1": {
+    "fullName": "Sequestosome 1 (p62)",
+    "function": "Selective autophagy receptor that targets ubiquitinated cargo for degradation. Also activates Nrf2 by competitively binding KEAP1, linking autophagy to antioxidant defense.",
+    "pathways": [
+      "Selective autophagy",
+      "NRF2-KEAP1 signaling",
+      "NF-kB signaling",
+      "mTORC1 signaling",
+      "Ferroptosis regulation",
+      "Autophagy"
+    ],
+    "drugs": [
+      "Autophagy modulators (hydroxychloroquine)",
+      "NRF2 inhibitors (brusatol, preclinical)",
+      "Verteporfin (disrupts p62 aggregation, preclinical)",
+      "Chloroquine (autophagy inhibitor, indirect)"
+    ],
+    "hccRole": "Accumulates in autophagy-deficient HCC, constitutively activating Nrf2 and driving antioxidant gene expression. Creates a feedforward loop protecting tumor cells from ROS-mediated death.",
+    "keyFinding": "Risk factor in HCC (HR=1.336, 95% CI 1.184-1.507, p<0.001); p62-KEAP1-NRF2 axis is a validated oncogenic driver in hepatocarcinogenesis",
+    "signature": "ros"
+  },
+  "TXNRD1": {
+    "fullName": "Thioredoxin Reductase 1",
+    "function": "Reduces thioredoxin using NADPH, maintaining cellular redox balance. Key enzyme in the thioredoxin antioxidant system, protecting cells from oxidative damage and regulating redox-sensitive transcription factors.",
+    "pathways": [
+      "Thioredoxin system",
+      "NRF2 antioxidant response",
+      "Selenoprotein metabolism",
+      "Ferroptosis resistance",
+      "Glutathione metabolism",
+      "Selenocompound metabolism",
+      "Ferroptosis defense"
+    ],
+    "drugs": [
+      "Auranofin (FDA-approved for rheumatoid arthritis, potent TXNRD1 inhibitor being repurposed)",
+      "PX-12 (thioredoxin inhibitor, clinical trials)",
+      "Ethaselen (TXNRD1 inhibitor, clinical trials in China)",
+      "Curcumin (indirect inhibitor)"
+    ],
+    "hccRole": "Highest hazard ratio (1.586) in the ROS signature. Overexpression enables HCC cells to tolerate high ROS levels generated during rapid proliferation and hypoxia.",
+    "keyFinding": "Strongest risk factor in ROS/ferroptosis signature (HR=1.586, 95% CI 1.364-1.844, p<0.001); auranofin sensitizes HCC to sorafenib",
+    "signature": "ros"
+  }
+}
